@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Train Scheduler</title>
+
+     <!-- Bootsrap CSS, AJAX, & jQuery CDN Links -->
+     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+ 
+     <!-- CSS & Font Files --> 
+     <link rel="stylesheet" href="./assets/css/style.css">
+
+
+</head>
+<body>
+    
+    <!-- Header Section -->
+    <div class="container" id="header">
+        <div class="row jumbotron text-center">
+            <h1 class="col-12 text-center">Trian Times</h1>
+            <h2 class="col-12 text-center" id="subheading">Chat | Groove | Wait</h2>
+        </div>
+    </div>
+
+    <!-- Content Section -->
+    <div class="container" id="video">
+        <div class="row jumbotron text-center">
+            <h2 class="col-12 text-center" id="subheading">This Train Will Be Here In <span id="wait-time">XX</span> seconds.<br>Get Your Groove On While You Wait!</h2>
+            <div class="col-6 embed-responsive embed-responsive-16by9">
+                <!-- <iframe src="https://player.vimeo.com/video/87142693?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                <!-- <iframe src="https://player.vimeo.com/video/7077560?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+
+                <iframe src="https://www.youtube.com/embed/XVNn56SjImQ?rel=0&amp;showinfo=0&autoplay=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Train Listings Section -->
+    <div class="container">
+        <div class="row card">
+            <div class="card-header text-center">Information</div>
+              <table class="table text-center" id="timetable">
+                <thead>
+                    <tr>
+                        <th scope="col">
+                            Trian Name
+                        </th>
+                        <th scope="col">
+                            Destination
+                        </th>
+                        <th scope="col">
+                            Frequency
+                        </th>
+                        <th scope="col">
+                            Next Arrival
+                        </th>
+                        <th scope="col">
+                            Minutes Away
+                        </th>
+                        <th scope="col">
+                            
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tableRows">
+
+                </tbody>
+            </table>   
+        </div>
+    </div>
+
+        
+    <!-- Add Info Section -->
+    <div class="container">
+        <div class="row card">   
+            <div class="card-header">Add Train And Inspiration</div>           
+            <form class="col-12" id="addCard">                   
+                <div class="form-group">
+                    <label for="employeeName">Train Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter Train Name">
+                </div>
+                <div class="form-group">
+                    <label for="role">Destination</label>
+                    <input type="text" class="form-control" id="destination"  placeholder="Enter Destination">
+                </div>
+                <div class="form-group">
+                    <label for="role">First Daily Departure (HH:MM:AM/PM)</label>
+                    <input type="text" class="form-control" id="firstTrain"  placeholder="Example 1:30am">
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Frequency</label>
+                    <input type="text" class="form-control" id="frequency"  placeholder="Enter Frequency">
+                </div>
+                <div class="form-group">
+                    <label for="rate">YouTube Video Link</label>
+                    <input type="text" class="form-control" id="src-link" placeholder="https://www.youtube.com/abc">
+                </div>
+                <div class="form-group text-center">
+                    <button type="submit" id="submit" class="col-12 col-md-4 btn btn-lrg">Submit</button>  
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bootstrap, Firebase, Moment.JS, & JS -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
+    <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
+    <script src="./assets/javascript/logic.js"></script>
+
+</body>
+</html>

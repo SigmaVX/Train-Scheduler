@@ -1,0 +1,13 @@
+
+        .btn-block {
+            padding-bottom: 10px;
+        }
+
+        .card-header, .jumbotron {
+            background-color: pink;
+            color: #ffffff;
+        }
+
+        .container{
+            margin-bottom: 20px;
+        }
