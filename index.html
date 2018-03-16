@@ -27,14 +27,32 @@
     </div>
 
     <!-- Content Section -->
-    <div class="container" id="video">
+    <div class="container" id="displayArea">
         <div class="row jumbotron text-center">
             <h2 class="col-12 text-center" id="subheading">This Train Will Be Here In <span id="wait-time">XX</span> seconds.<br>Get Your Groove On While You Wait!</h2>
-            <div class="col-6 embed-responsive embed-responsive-16by9">
+            <div class="col-6 embed-responsive embed-responsive-16by9" id="videos">
                 <!-- <iframe src="https://player.vimeo.com/video/87142693?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                
+
+                <!-- Gunfighter short -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/TXfltmzRG-g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
+                <!-- Jig Saw Roomate -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfDX9WOXbTk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
+                <!-- crazy train alt -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/A4dVTuE6X6g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
+                <!-- crazy train -->
                 <!-- <iframe src="https://player.vimeo.com/video/7077560?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 
-                <iframe src="https://www.youtube.com/embed/XVNn56SjImQ?rel=0&amp;showinfo=0&autoplay=1" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+                <!-- funkytown -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_0l3rCgW1c?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                
+                <!-- Lee Van Clef -->
+                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/d1WaOKlldIE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
+
             </div>
         </div>
     </div>
@@ -43,7 +61,7 @@
     <!-- Train Listings Section -->
     <div class="container">
         <div class="row card">
-            <div class="card-header text-center">Information</div>
+            <div class="card-header text-center">Train Information | Refresh Your Browser For Updates</div>
               <table class="table text-center" id="timetable">
                 <thead>
                     <tr>
@@ -78,7 +96,7 @@
     <!-- Add Info Section -->
     <div class="container">
         <div class="row card">   
-            <div class="card-header">Add Train And Inspiration</div>           
+            <div class="card-header" id="addTrains">Add Train And Inspiration</div>           
             <form class="col-12" id="addCard">                   
                 <div class="form-group">
                     <label for="employeeName">Train Name</label>
@@ -89,12 +107,12 @@
                     <input type="text" class="form-control" id="destination"  placeholder="Enter Destination">
                 </div>
                 <div class="form-group">
-                    <label for="role">First Daily Departure (HH:MM:AM/PM)</label>
+                    <label for="role">First Daily Departure (HH:MM AM/PM)</label>
                     <input type="text" class="form-control" id="firstTrain"  placeholder="Example 1:30am">
                 </div>
                 <div class="form-group">
-                    <label for="start-date">Frequency</label>
-                    <input type="text" class="form-control" id="frequency"  placeholder="Enter Frequency">
+                    <label for="start-date">Frequency In Minutes</label>
+                    <input type="text" class="form-control" id="frequency"  placeholder="Enter Frequency In Minutes">
                 </div>
                 <div class="form-group">
                     <label for="rate">YouTube Video Link</label>
@@ -103,9 +121,25 @@
                 <div class="form-group text-center">
                     <button type="submit" id="submit" class="col-12 col-md-4 btn btn-lrg">Submit</button>  
                 </div>
+                <div class="form-group text-center">
+                    <button type="submit" id="update" class="col-12 col-md-4 btn btn-lrg">Update</button>
+                    <button type="submit" id="cancel" class="col-12 col-md-4 btn btn-lrg">Cancel</button>    
+                </div>
             </form>
         </div>
     </div>
+
+    <!--Footer Section-->
+    <footer>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-12 pt-4 pb-3 text-center">
+                    <p><strong>© Copyright 2018 Tony Wible</strong></p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 
     <!-- Bootstrap, Firebase, Moment.JS, & JS -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>  
