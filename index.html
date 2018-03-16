@@ -61,7 +61,7 @@
     <!-- Train Listings Section -->
     <div class="container">
         <div class="row card">
-            <div class="card-header text-center">Train Information | Refresh Your Browser For Updates</div>
+            <div class="card-header text-center">Train Information<br>Select A Train For Real Time Updates</div>
               <table class="table text-center" id="timetable">
                 <thead>
                     <tr>
@@ -96,8 +96,8 @@
     <!-- Add Info Section -->
     <div class="container">
         <div class="row card">   
-            <div class="card-header" id="addTrains">Add Train And Inspiration</div>           
-            <form class="col-12" id="addCard">                   
+            <div class="card-header text-center" id="addTrainHeader">Add Train Details And Videos</div>           
+            <form class="col-12" id="addTrainsForm">                   
                 <div class="form-group">
                     <label for="employeeName">Train Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter Train Name">
@@ -115,8 +115,8 @@
                     <input type="text" class="form-control" id="frequency"  placeholder="Enter Frequency In Minutes">
                 </div>
                 <div class="form-group">
-                    <label for="rate">YouTube Video Link</label>
-                    <input type="text" class="form-control" id="src-link" placeholder="https://www.youtube.com/abc">
+                    <label for="rate">Video iFrame Tag</label>
+                    <input type="text" class="form-control" id="src-link" placeholder="<iframe src='https://www.youtube.com/abc' </iframe>">
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" id="submit" class="col-12 col-md-4 btn btn-lrg">Submit</button>  

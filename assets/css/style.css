@@ -1,13 +1,22 @@
+tr button {
+    width: 75px;
+    color: purple;
+}
 
-        .btn-block {
-            padding-bottom: 10px;
-        }
+.delete{
+    background-color: red;
+    color: black;
+}
 
-        .card-header, .jumbotron {
-            background-color: pink;
-            color: #ffffff;
-        }
+.btn-block {
+    padding-bottom: 10px;
+}
 
-        .container{
-            margin-bottom: 20px;
-        }
+.card-header{
+    background-color: pink;
+    color: #ffffff;
+}
+
+.container{
+    margin-bottom: 20px;
+}
