@@ -1,6 +1,34 @@
+h1{
+    font-size: 75px;
+}
+
 tr button {
     width: 75px;
-    color: purple;
+}
+
+
+.btn-block {
+    padding-bottom: 10px;
+}
+
+.card-header{
+    background-color: darkslategrey;
+    color: #ffffff;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.cardSubHeader{
+    font-size: 20px;
+}
+
+
+.container{
+    margin-bottom: 20px;
+}
+
+.content{
+    padding-top: 20px;
 }
 
 .delete{
@@ -8,15 +36,21 @@ tr button {
     color: black;
 }
 
-.btn-block {
-    padding-bottom: 10px;
+#header{
+    padding-top: 10%;
 }
 
-.card-header{
-    background-color: pink;
-    color: #ffffff;
+
+#subHeading1{
+    padding-bottom: 50px;
 }
 
-.container{
-    margin-bottom: 20px;
+#subHeading2{
+    padding-top: 40px;
+    padding-bottom: 20px;
+
 }
+#wait-time{
+    font-size: 125px;
+}
+

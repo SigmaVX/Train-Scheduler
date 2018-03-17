@@ -1,5 +1,8 @@
 $(document).ready(function () {
 
+    // Array for keys
+    var childKeys = [];
+
     // Used for timer
     var countdown;
 
@@ -24,10 +27,11 @@ $(document).ready(function () {
     var waitTime;
     var nextDeparture;
 
-    // Hides update button on load
+    // Hides update button and content on load
     $("#submit").show();
     $("#update").hide();
     $("#cancel").hide();
+    $("#content").hide();
     
     // Initialize Firebase
     var config = {
@@ -116,6 +120,12 @@ $(document).ready(function () {
         childID = snapshot.key;
         console.log("Child ID: " + childID);
 
+        // Stores child key's in array
+        if (childKeys.indexOf(childID) === -1){
+            childKeys.push(childID);
+        }
+
+        // Runs time calculations
         timeCalcs();
 
         // Adds updated vars to html with jQuery
@@ -150,6 +160,7 @@ $(document).ready(function () {
        
         var newSelectButton = $("<button>").html("Select");
         newSelectButton.attr("data", nextDeparture);
+        newSelectButton.attr("childID", childID);
         newSelectButton.attr("class", "btn select my-1 mx-1");
         newRow.append(newSelectButton);
        
@@ -169,6 +180,9 @@ $(document).ready(function () {
     // EVENT - Starts timer and media for selected train
     $(document).on("click", ".select", function () {
         
+        $("#header").hide();
+        $("#content").show();
+    
         // Clears any prior intervals
         clearInterval(countdown);
 
@@ -194,12 +208,24 @@ $(document).ready(function () {
             $("#wait-time").text(secondsRemaining);
         }
 
+        // Looks up child key
+        childID = $(this).attr("childID");
+        console.log("Select: " + childID);
+
+        // Queries the child node so we can save the values to a local var    
+        database.ref("trainScheduler/"+childID).once("value", function(snapshot){
+            link = snapshot.val().link;
+        });
+
+        // Set iFrame in HTML from link var
+        $("#video").html(link);
+
     });
     
 
     // EVENT - Deletes a child node
     $(document).on("click", ".delete", function () {
-        var childID = $(this).attr("childID");
+        childID = $(this).attr("childID");
         console.log("Delete: " + childID);
         database.ref().child("trainScheduler").child(childID).remove();
         alert("Removed");
@@ -313,5 +339,34 @@ $(document).ready(function () {
         $("#cancel").hide();
 
     });
+
+    // EVENT - Pick random video
+    $("#shuffle").on("click", function () {
+
+        if(childKeys.length<1){
+            alert("No Videos To Display");
+        } else {
+            var luck = Math.floor(Math.random() * childKeys.length);
+            // maybe add while loop to prevent two back to back picks of same number
+
+            console.log("Luck Picked Array Spot: " + luck);
+            var luckChildID = childKeys[luck]; 
+
+            database.ref("trainScheduler/"+luckChildID).once("value", function(snapshot){
+                var video = snapshot.val().link;
+            });
+
+            $("#video").html(video);
+
+        }
+        // See if array is empty
+        // Generate random number based on array lenght 
+        // Use random number to select a random child key
+        // Store link from firebase in local var
+        // Set var to html with JQ
+
+    });
+
+
 
 });

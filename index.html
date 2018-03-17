@@ -19,40 +19,41 @@
 <body>
     
     <!-- Header Section -->
-    <div class="container" id="header">
-        <div class="row jumbotron text-center">
-            <h1 class="col-12 text-center">Trian Times</h1>
-            <h2 class="col-12 text-center" id="subheading">Chat | Groove | Wait</h2>
+    <div class="container" id="splash">
+        
+        <div class="row text-center" id="header">
+            <h1 class="col-12 text-center hide">Train Times</h1>
+            <h2 class="col-12 text-center hide" id="subHeading1">Select Or Add A Train Below</h2>
         </div>
-    </div>
 
-    <!-- Content Section -->
-    <div class="container" id="displayArea">
-        <div class="row jumbotron text-center">
-            <h2 class="col-12 text-center" id="subheading">This Train Will Be Here In <span id="wait-time">XX</span> seconds.<br>Get Your Groove On While You Wait!</h2>
-            <div class="col-6 embed-responsive embed-responsive-16by9" id="videos">
-                <!-- <iframe src="https://player.vimeo.com/video/87142693?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-                
+        <div class="row text-center" id="content">
+            
+            <div class="col-12 col-md-5 text-center">
+                <h2 class="col-12 text-center" id="subHeading2" >Train Arrives In <br><span id="wait-time">100</span><br>Seconds</h2>
+                <button class="order-5 col-6 btn" id="shuffle">Shuffle Videos</button>     
+            </div>
+            
+            <div class="col-12 col-md-7 text-center embed-responsive embed-responsive-16by9" id="video">
+                    <!-- <iframe src="https://player.vimeo.com/video/87142693?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                    
 
-                <!-- Gunfighter short -->
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/TXfltmzRG-g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                    <!-- Gunfighter short -->
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/TXfltmzRG-g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 
-                <!-- Jig Saw Roomate -->
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfDX9WOXbTk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                    <!-- Jig Saw Roomate -->
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfDX9WOXbTk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 
-                <!-- crazy train alt -->
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/A4dVTuE6X6g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                    <!-- crazy train alt -->
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/A4dVTuE6X6g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
 
-                <!-- crazy train -->
-                <!-- <iframe src="https://player.vimeo.com/video/7077560?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+                    <!-- crazy train -->
+                    <!-- <iframe src="https://player.vimeo.com/video/7077560?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
 
-                <!-- funkytown -->
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_0l3rCgW1c?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-                
-                <!-- Lee Van Clef -->
-                <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/d1WaOKlldIE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-
-
+                    <!-- funkytown -->
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_0l3rCgW1c?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                    
+                    <!-- Lee Van Clef -->
+                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/d1WaOKlldIE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
             </div>
         </div>
     </div>
@@ -61,7 +62,9 @@
     <!-- Train Listings Section -->
     <div class="container">
         <div class="row card">
-            <div class="card-header text-center">Train Information<br>Select A Train For Real Time Updates</div>
+            <div class="card-header text-center">
+                Train Information<br><span class="cardSubHeader">Select A Train For Real Time Updates</span>
+            </div>
               <table class="table text-center" id="timetable">
                 <thead>
                     <tr>
@@ -107,7 +110,7 @@
                     <input type="text" class="form-control" id="destination"  placeholder="Enter Destination">
                 </div>
                 <div class="form-group">
-                    <label for="role">First Daily Departure (HH:MM AM/PM)</label>
+                    <label for="role">First Daily Departure</label>
                     <input type="text" class="form-control" id="firstTrain"  placeholder="Example 1:30am">
                 </div>
                 <div class="form-group">
