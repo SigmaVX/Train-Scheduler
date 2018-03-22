@@ -6,6 +6,9 @@ $(document).ready(function () {
     // Used for timer
     var countdown;
 
+    // Used for shuffeling videos
+    var video
+
     // Used for setting values
     var name;
     var destination;
@@ -105,6 +108,15 @@ $(document).ready(function () {
         });
     });
 
+
+    // Checks if there are enough videos to shuffle
+    function shuffleCheck(){
+        if(childKeys.length>1){
+            $("#shuffle").show();
+        } else {
+            $("#shuffle").hide();
+        }
+    }
     
     // EVENT - Queries Firebase on page load and each time a child is added - retuns last 20 listings. 
     database.ref("trainScheduler").orderByChild("dateAdded").limitToLast(20).on("child_added", function (snapshot) {
@@ -123,10 +135,14 @@ $(document).ready(function () {
         // Stores child key's in array
         if (childKeys.indexOf(childID) === -1){
             childKeys.push(childID);
+            console.log("Key Array: " + childKeys);
         }
 
         // Runs time calculations
         timeCalcs();
+
+        // Runs shuffle video check
+        shuffleCheck();
 
         // Adds updated vars to html with jQuery
         // Child ID is added to each item so we can manipulate later
@@ -204,8 +220,13 @@ $(document).ready(function () {
 
         // Timer countdown function
         function timer() {
+            if(secondsRemaining<1){
+                secondsRemaining=0;
+                $("#wait-time").text(secondsRemaining);
+            } else {
             secondsRemaining--;
             $("#wait-time").text(secondsRemaining);
+            }
         }
 
         // Looks up child key
@@ -232,6 +253,16 @@ $(document).ready(function () {
 
         // Hides row on HTML
         $(this).parent().hide();
+
+        // Remove childID from array
+        console.log("Key Array Before Delete: " + childKeys);
+        var deleteSpot = childKeys.indexOf(childID);
+        childKeys.splice(deleteSpot, 1);
+        console.log("Key Array After Delete: " + childKeys);
+
+        // Runs shuffle video check
+        shuffleCheck();
+
     });
 
 
@@ -260,10 +291,12 @@ $(document).ready(function () {
             $("#addTrainsHeader").text("Edit Train Information");
             // $("#addTrainsForm).css( "background-color", "red" );
 
-
             $("#submit").hide();
             $("#update").show();
             $("#cancel").show();
+
+            // Runs shuffle video check
+            shuffleCheck();
         });
     });
 
@@ -317,6 +350,9 @@ $(document).ready(function () {
         $("#next-arrival" + childID).html(nextDeparture);
         $("#wait-time" + childID).html(waitTime);
 
+        // Runs shuffle video check
+        shuffleCheck();
+
     });
 
 
@@ -351,20 +387,14 @@ $(document).ready(function () {
 
             console.log("Luck Picked Array Spot: " + luck);
             var luckChildID = childKeys[luck]; 
+            console.log("Key Picked: " + luckChildID);
 
             database.ref("trainScheduler/"+luckChildID).once("value", function(snapshot){
-                var video = snapshot.val().link;
+                video = snapshot.val().link;
             });
 
             $("#video").html(video);
-
         }
-        // See if array is empty
-        // Generate random number based on array lenght 
-        // Use random number to select a random child key
-        // Store link from firebase in local var
-        // Set var to html with JQ
-
     });
 
 

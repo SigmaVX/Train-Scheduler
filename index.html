@@ -12,6 +12,7 @@
      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
  
      <!-- CSS & Font Files --> 
+     <link href="https://fonts.googleapis.com/css?family=Mina|Roboto" rel="stylesheet">
      <link rel="stylesheet" href="./assets/css/style.css">
 
 
@@ -19,7 +20,7 @@
 <body>
     
     <!-- Header Section -->
-    <div class="container" id="splash">
+    <div class="container-fluid" id="splash">
         
         <div class="row text-center" id="header">
             <h1 class="col-12 text-center hide">Train Times</h1>
@@ -34,38 +35,19 @@
             </div>
             
             <div class="col-12 col-md-7 text-center embed-responsive embed-responsive-16by9" id="video">
-                    <!-- <iframe src="https://player.vimeo.com/video/87142693?autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
                     
-
-                    <!-- Gunfighter short -->
-                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/TXfltmzRG-g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-
-                    <!-- Jig Saw Roomate -->
-                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfDX9WOXbTk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-
-                    <!-- crazy train alt -->
-                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/A4dVTuE6X6g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-
-                    <!-- crazy train -->
-                    <!-- <iframe src="https://player.vimeo.com/video/7077560?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
-
-                    <!-- funkytown -->
-                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_0l3rCgW1c?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-                    
-                    <!-- Lee Van Clef -->
-                    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/d1WaOKlldIE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
             </div>
         </div>
     </div>
 
 
     <!-- Train Listings Section -->
-    <div class="container">
-        <div class="row card">
-            <div class="card-header text-center">
+    <div class="container-fluid">
+        <div class="row card" style="overflow-x:auto;">
+            <div class="card-header text-center"  id="listings-card">
                 Train Information<br><span class="cardSubHeader">Select A Train For Real Time Updates</span>
             </div>
-              <table class="table text-center" id="timetable">
+              <table class="table text-center" id="timetable" >
                 <thead>
                     <tr>
                         <th scope="col">
@@ -97,36 +79,36 @@
 
         
     <!-- Add Info Section -->
-    <div class="container">
+    <div class="container-fluid" id="addTrainsContainer">
         <div class="row card">   
             <div class="card-header text-center" id="addTrainHeader">Add Train Details And Videos</div>           
             <form class="col-12" id="addTrainsForm">                   
                 <div class="form-group">
-                    <label for="employeeName">Train Name</label>
+                    <label for="train-name">Train Name</label>
                     <input type="text" class="form-control" id="name" placeholder="Enter Train Name">
                 </div>
                 <div class="form-group">
-                    <label for="role">Destination</label>
+                    <label for="destination">Destination</label>
                     <input type="text" class="form-control" id="destination"  placeholder="Enter Destination">
                 </div>
                 <div class="form-group">
-                    <label for="role">First Daily Departure</label>
+                    <label for="first-departure">First Daily Departure</label>
                     <input type="text" class="form-control" id="firstTrain"  placeholder="Example 1:30am">
                 </div>
                 <div class="form-group">
-                    <label for="start-date">Frequency In Minutes</label>
+                    <label for="frequency">Frequency In Minutes</label>
                     <input type="text" class="form-control" id="frequency"  placeholder="Enter Frequency In Minutes">
                 </div>
                 <div class="form-group">
-                    <label for="rate">Video iFrame Tag</label>
+                    <label for="iframe-link">Video iFrame Tag</label>
                     <input type="text" class="form-control" id="src-link" placeholder="<iframe src='https://www.youtube.com/abc' </iframe>">
                 </div>
                 <div class="form-group text-center">
                     <button type="submit" id="submit" class="col-12 col-md-4 btn btn-lrg">Submit</button>  
                 </div>
                 <div class="form-group text-center">
-                    <button type="submit" id="update" class="col-12 col-md-4 btn btn-lrg">Update</button>
-                    <button type="submit" id="cancel" class="col-12 col-md-4 btn btn-lrg">Cancel</button>    
+                    <button type="update" id="update" class="col-12 col-md-4 btn btn-lrg">Update</button>
+                    <button type="cancel" id="cancel" class="col-12 col-md-4 btn btn-lrg">Cancel</button>    
                 </div>
             </form>
         </div>
@@ -149,6 +131,27 @@
     <script src="https://www.gstatic.com/firebasejs/4.11.0/firebase.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.21.0/moment.min.js"></script>
     <script src="./assets/javascript/logic.js"></script>
+
+
+    <!-- Examples -->
+    <!-- Jig Saw Roomate -->
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/ZfDX9WOXbTk?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
+    <!-- crazy train alt -->
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/A4dVTuE6X6g?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
+    <!-- crazy train -->
+    <!-- <iframe src="https://player.vimeo.com/video/7077560?autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+
+    <!-- funkytown -->
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/Z_0l3rCgW1c?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+    
+    <!-- Lee Van Clef -->
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/d1WaOKlldIE?rel=0&amp;showinfo=0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+
+    <!-- Sound & Vision -->
+    <!-- <iframe src="https://player.vimeo.com/video/232791610?autoplay=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> -->
+
 
 </body>
 </html>

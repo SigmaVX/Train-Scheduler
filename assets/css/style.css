@@ -1,45 +1,71 @@
+
+footer{
+    background-color: #183A37;
+    color: #F9EA9A;
+}
+
 h1{
     font-size: 75px;
+    font-family: 'Mina', sans-serif;
+    color: #04151F;
+}
+
+h2{
+    font-family: 'Mina', sans-serif;
 }
 
 tr button {
     width: 75px;
 }
 
-
 .btn-block {
     padding-bottom: 10px;
 }
 
 .card-header{
-    background-color: darkslategrey;
-    color: #ffffff;
-    font-size: 30px;
-    font-weight: 700;
+    background-color: #183A37;
+    color: #F9EA9A;
+    font-size: 35px;
+    font-weight: 600;
 }
 
 .cardSubHeader{
     font-size: 20px;
 }
 
-
 .container{
     margin-bottom: 20px;
 }
 
-.content{
-    padding-top: 20px;
+.delete{
+    background-color: #F98948;
+    color: black;
 }
 
-.delete{
-    background-color: red;
-    color: black;
+.select, .edit{
+    background-color: #684E32;
+    color: #F9EA9A;
+}
+
+#content{
+    /* margin-top: 20px; */
 }
 
 #header{
     padding-top: 10%;
+    min-height: 35%;
 }
 
+#listings-card, #addTrainHeader{
+    border-radius: 0px;
+    font-family: 'Mina', sans-serif;
+}
+
+#splash{
+    background-image: url("../images/train-alt.jpg");
+    background-size: cover;
+    background-position: center;
+}
 
 #subHeading1{
     padding-bottom: 50px;
@@ -48,8 +74,18 @@ tr button {
 #subHeading2{
     padding-top: 40px;
     padding-bottom: 20px;
-
+    color: #04151F;
 }
+
+#shuffle{
+    margin-bottom: 20px;
+}
+
+#submit, #update, #cancel, #shuffle{
+    background-color: #684E32;
+    color: #F9EA9A;
+}
+
 #wait-time{
     font-size: 125px;
 }
