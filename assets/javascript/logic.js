@@ -146,49 +146,58 @@ $(document).ready(function () {
 
         // Adds updated vars to html with jQuery
         // Child ID is added to each item so we can manipulate later
-        var newRow = $("<tr>");
+        var newRow = $("<tr>").attr("class","d-flex");
         $("#tableRows").append(newRow);
         
         var newName = $("<td>").html(name);
-        newName.attr("class", "name");
+        newName.attr("class", "col-2 name");
         newName.attr("id", "name" + childID);
         newRow.append(newName);
         
         var newDestination = $("<td>").html(destination);
-        newDestination.attr("class", "destination");
+        newDestination.attr("class", "col-2 destination");
         newDestination.attr("id", "destination" + childID);
         newRow.append(newDestination);
         
         var newFrequency = $("<td>").html(frequency);
-        newFrequency.attr("class", "frequency");
+        newFrequency.attr("class", "col-1 frequency");
         newFrequency.attr("id", "frequency" + childID);
         newRow.append(newFrequency);
         
         var nextArrival = $("<td>").html(nextDeparture);
-        nextArrival.attr("class", "next-arrival");
+        nextArrival.attr("class", "col-1 next-arrival");
         nextArrival.attr("id", "next-arrival" + childID);
         newRow.append(nextArrival);
         
         var newWaitTime = $("<td>").html(waitTime);
-        newWaitTime.attr("class", "wait-time");
+        newWaitTime.attr("class", "col-1 wait-time");
         newWaitTime.attr("id", "wait-time" + childID);
         newRow.append(newWaitTime);
-       
+        // ------------------------
+
+        var newBtnArea = $("<td>");
+        newBtnArea.attr("class", "col-5 btn-area");
+        newBtnArea.attr("id", "btn-area" + childID);
+        newRow.append(newBtnArea);
+
+        //------------------------ 
+
+
         var newSelectButton = $("<button>").html("Select");
         newSelectButton.attr("data", nextDeparture);
         newSelectButton.attr("childID", childID);
-        newSelectButton.attr("class", "btn select my-1 mx-1");
-        newRow.append(newSelectButton);
+        newSelectButton.attr("class", "btn col-3 select my-1 mx-1");
+        newBtnArea.append(newSelectButton);
        
         var newDeleteButton = $("<button>").html("Delete");
         newDeleteButton.attr("childID", childID);
-        newDeleteButton.attr("class", "btn delete my-1 mx-1");
-        newRow.append(newDeleteButton);
+        newDeleteButton.attr("class", "btn col-3 delete my-1 mx-1");
+        newBtnArea.append(newDeleteButton);
 
         var newEditButton = $("<button>").html("Edit");
         newEditButton.attr("childID", childID);
-        newEditButton.attr("class", "btn edit my-1 mx-1");
-        newRow.append(newEditButton);
+        newEditButton.attr("class", "btn col-3 edit my-1 mx-1");
+        newBtnArea.append(newEditButton);
 
     });
 
